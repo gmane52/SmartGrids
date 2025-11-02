@@ -36,7 +36,7 @@ Finally, a use case and smart grid architecture model (SGAM) were developed to c
 
 
 ## Schedule
-![Project schedule](gantt.png)
+![Project schedule](Gantt.png)
 
 # DUDAS:
 - Los porfiles tienen que ser de 24h, un solo dia, O de todo el año cada 24h.??
