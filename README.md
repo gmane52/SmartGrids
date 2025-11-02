@@ -6,7 +6,7 @@ The study focuses on a 110 kV transmission system (illustrated below) that suppl
 
 In recent years, the network has faced increasing challenges due to rising electricity demand and the decommissioning of the Igualada coal plant, carried out as part of CO₂ reduction policies. Currently, the Vandellòs nuclear power plant remains the only active generation source in the region, which is insufficient to cover total demand. As a result, a considerable share of the required power must be imported through the Terrassa interconnection.
 
-he project was divided into several stages, each designed to progressively analyze, optimize, and modernize the 110 kV transmission network under study.
+The project was divided into several stages, each designed to progressively analyze, optimize, and modernize the 110 kV transmission network under study.
 
 The first stage focused on understanding the current operation of the system, by modelling both demand and generation profiles for a typical weekday using real data from the Spanish TSO (REE). These profiles were normalized and implemented in PandaPower to perform a 24-hour load flow study, identifying key technical issues such as voltage deviations, equipment overloads, and insufficient generation capacity. The operating costs were also estimated, including the amount and price of imported energy and the expected failure costs for lines and transformers.
 
