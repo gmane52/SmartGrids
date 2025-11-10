@@ -153,7 +153,7 @@ pp.create_load(project_net, 13, p_mw, q_mvar = q_mvar, name="type II load - Tarr
 
 
 # Creating generators
-pp.create_sgen(project_net, 4, 215, name="Vandellos 215 MW")
+pp.create_gen(project_net, bus=4, p_mw=215, vm_pu=1.0, name="Vandellos 215 MW")
 #pp.create_sgen(project_net, 9, 1, name="Valls 215 MW")
 #pp.create_sgen(project_net, 10, 1, name="Falset 215 MW")
 #pp.create_sgen(project_net, 11, 1, name="Conesa 215 MW")
