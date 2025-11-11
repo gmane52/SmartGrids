@@ -10,6 +10,7 @@ import os
 #### DEFINITION OF GRID ###
 # New net
 project_net = pp.create_empty_network()
+print("#INFO: New Net created")
 
 # creating HV buses
 pp.create_bus(project_net, name="Terrasa", vn_kv=110, geodata=(2.01787, 41.56681))
@@ -30,6 +31,7 @@ pp.create_bus(project_net, name="Manresa_LV", vn_kv=20, geodata=(1.81210, 41.715
 pp.create_bus(project_net, name="Tarrega_LV", vn_kv=20, geodata=(1.15177, 41.64157))
 pp.create_bus(project_net, name="Montblanc_LV", vn_kv=20, geodata=(1.15398, 41.37473))
 pp.create_bus(project_net, name="Lleida_LV", vn_kv=20, geodata=(0.61427, 41.61262))
+print("#INFO: Buses created")
 
 # creating Tranformers
 pp.create_transformer_from_parameters(project_net, hv_bus = 1, lv_bus = 12, sn_mva = 100, 
@@ -47,13 +49,14 @@ pp.create_transformer_from_parameters(project_net, hv_bus = 3, lv_bus = 14, sn_m
 pp.create_transformer_from_parameters(project_net, hv_bus = 5, lv_bus = 15, sn_mva = 100, 
                                       vn_hv_kv = 110, vn_lv_kv = 20, vk_percent = 12, 
                                       vkr_percent = 0.26, pfe_kw = 55, i0_percent = 0.06, name = 'Trafo_Lleida')
+print("#INFO: Trafos created")
 
 # Creating lines
 kg = 0.809
 r_cond = (30.42/2)/1000 #mm -> m
 r01_km = 0.062 #ohm/km
 max_i_ka = 0.9 # A
-print(f"##INFO - r01_km lines: {r01_km}")
+#print(f"##INFO - r01_km lines: {r01_km}")
 
 ## Single Lines
 
@@ -70,8 +73,8 @@ x_km = 0.2*np.log(GMD/GMR)
 c_nf_km = 1000 / (18*np.log(GMD/r_cond))
 x_km = 0.402
 c_nf_km = 8.64
-print(f"##INFO - x_km Single line: {x_km}")
-print(f"##INFO - c_nf_km Single line: {c_nf_km}")
+#print(f"##INFO - x_km Single line: {x_km}")
+#print(f"##INFO - c_nf_km Single line: {c_nf_km}")
 
 pp.create_line_from_parameters(project_net, from_bus = 5, to_bus = 2, length_km = 44, r_ohm_per_km = r01_km, x_ohm_per_km = x_km, c_nf_per_km = c_nf_km, max_i_ka = max_i_ka, name='Lleida-Tarrega')
 pp.create_line_from_parameters(project_net, from_bus = 2, to_bus = 6, length_km = 40, r_ohm_per_km = r01_km, x_ohm_per_km = x_km, c_nf_per_km = c_nf_km, max_i_ka = max_i_ka, name='Tarrega-Igualada')
@@ -125,13 +128,14 @@ x_km = 0.2*(np.log(GMD/GMR_eq))
 c_nf_km = 1000 / (18*np.log(GMD/r_cond))
 x_km = 0.198
 c_nf_km = 8.3
-print(f"##INFO - x_km Dobule line: {x_km}")
-print(f"##INFO - c_nf_km Dobule line: {c_nf_km}")
+#print(f"##INFO - x_km Dobule line: {x_km}")
+#print(f"##INFO - c_nf_km Dobule line: {c_nf_km}")
 
 pp.create_line_from_parameters(project_net, from_bus = 4, to_bus = 3, length_km = 52, r_ohm_per_km = r01_km/2, x_ohm_per_km = x_km, c_nf_per_km = c_nf_km , max_i_ka = max_i_ka, parallel = 1, name='Vandellos-Montblanc')
 pp.create_line_from_parameters(project_net, from_bus = 3, to_bus = 2, length_km = 30, r_ohm_per_km = r01_km/2, x_ohm_per_km = x_km, c_nf_per_km = c_nf_km , max_i_ka = max_i_ka, parallel = 1, name='Montblanc-Tarrega')
 pp.create_line_from_parameters(project_net, from_bus = 2, to_bus = 1, length_km = 58, r_ohm_per_km = r01_km/2, x_ohm_per_km = x_km, c_nf_per_km = c_nf_km , max_i_ka = max_i_ka, parallel = 1, name='Tarrega-Manresa')
 
+print("#INFO: Lines created")
 
 # Creating loads 
 
@@ -151,6 +155,7 @@ p_mw = 115
 q_mvar= get_reactive(p_mw, PF)
 pp.create_load(project_net, 13, p_mw, q_mvar = q_mvar, name="type II load - Tarrega", scaling=1.0, in_service=True, type="wye")
 
+print("#INFO: Loads created")
 
 # Creating generators
 pp.create_gen(project_net, bus=4, p_mw=215, vm_pu=1.0, name="Vandellos 215 MW")
@@ -159,14 +164,19 @@ pp.create_gen(project_net, bus=4, p_mw=215, vm_pu=1.0, name="Vandellos 215 MW")
 #pp.create_sgen(project_net, 11, 1, name="Conesa 215 MW")
 #pp.create_sgen(project_net, 7, 1, name="Perello 215 MW")
 #pp.create_sgen(project_net, 8, 1, name="Agramunt 215 MW")
+print("#INFO: Generators created")
 
 # Adding SLACK
 pp.create_ext_grid(net=project_net, bus = 0, vm_pu = 1.0, va_degree = 0.0, name = 'External Grid')
 
-## GUardar
+print("#INFO: Slack created")
+
+## Guardar
 base_dir = os.path.dirname(os.path.abspath(__file__))
-directorio = os.path.join(base_dir, "Project_net.xlsx")
+directorio = os.path.join(base_dir, "..", "data", "Project_net.xlsx")
 pp.to_excel(project_net, directorio)
+
+print("#INFO: Save ok")
 
 # Presentation:
 print()
