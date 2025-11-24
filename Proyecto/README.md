@@ -19,13 +19,23 @@ Finally, a use case and smart grid architecture model (SGAM) were developed to c
 # Topics and Schedule 
 ## I. Study of the current system:
 - Implemented on commit 11/10/2025 [b1a7017](https://github.com/gmane52/SmartGrids/commit/b1a7017666395493133c01662ca9f717cf50e4df)
+
 ### a. Data adquisitation
 - Implemented on commit 11/10/2025 [b1a7017](https://github.com/gmane52/SmartGrids/commit/b1a7017666395493133c01662ca9f717cf50e4df)
+
 ### b. Normalaise demand and generation 
 - Implemented on commit 11/10/2025 [b1a7017](https://github.com/gmane52/SmartGrids/commit/b1a7017666395493133c01662ca9f717cf50e4df)
+
 ### c. Model the electrical system with PandaPower
-Implemented on commit 11/10/2025 [1e79616](https://github.com/gmane52/SmartGrids/commit/1e796167f9bf61e4c781d877edd6d97b1307bb29)
-### d. Carry out the load flow
+For this part, an extra file has been developed named "GridDefinition.py". This script generates and saves the basic aspects of the network in a .xml file so it can be used for next steps and has different versions of the grid. It generates HVbuses, MVbuses, Transformers, lines, loads, generators and slack without considering load and generation profiles. 
+
+- Implemented on commit 11/10/2025 [1e79616](https://github.com/gmane52/SmartGrids/commit/1e796167f9bf61e4c781d877edd6d97b1307bb29)
+
+
+### d. Carry out the load flow study according to the loead and generation profile for 24h
+**Considerations:**
+- Loads have a PF of 0.98 inductive
+- Voltage at the generation points must be kept constant.
 ### e. Identify the problems of the current system:
 1. Demand coverage
 2. Voltage deviations
