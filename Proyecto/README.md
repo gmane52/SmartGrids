@@ -18,18 +18,22 @@ Finally, a use case and smart grid architecture model (SGAM) were developed to c
 
 # Topics and Schedule 
 ## I. Study of the current system:
+- Implemented on commit 11/10/2025 [b1a7017](https://github.com/gmane52/SmartGrids/commit/b1a7017666395493133c01662ca9f717cf50e4df)
 ### a. Data adquisitation
+- Implemented on commit 11/10/2025 [b1a7017](https://github.com/gmane52/SmartGrids/commit/b1a7017666395493133c01662ca9f717cf50e4df)
 ### b. Normalaise demand and generation 
+- Implemented on commit 11/10/2025 [b1a7017](https://github.com/gmane52/SmartGrids/commit/b1a7017666395493133c01662ca9f717cf50e4df)
 ### c. Model the electrical system with PandaPower
+Implemented on commit 11/10/2025 [1e79616](https://github.com/gmane52/SmartGrids/commit/1e796167f9bf61e4c781d877edd6d97b1307bb29)
 ### d. Carry out the load flow
 ### e. Identify the problems of the current system:
-- Demand coverage
-- Voltage deviations
-- Equipment overload
-- Interruptibility (for one year)
+1. Demand coverage
+2. Voltage deviations
+3. Equipment overload
+4. Interruptibility (for one year)
 ### f. Estimate the network operating costs for one year
-- Compute total amount of energy imported and its cost considering the three time zones
-- Compute line and transformer failure costs
+1. Compute total amount of energy imported and its cost considering the three time zones
+2. Compute line and transformer failure costs
 
 ## II. Upgrading the current network, phase 1.
 
