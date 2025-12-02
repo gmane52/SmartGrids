@@ -34,8 +34,8 @@ def evaluar_N_menos1(net, vmin=0.9, vmax=1.1, max_load=80):
         passes = success and not V_violated_buses and not P_violated_lines
 
         results.append({
-            "line": elementos,
-            "success": success,
+            "Line_Fail": elementos,
+            "Simulation_success": success,
             "passes_N-1": passes,
             "V_violated_buses": V_violated_buses,
             "P_violated_lines": P_violated_lines
