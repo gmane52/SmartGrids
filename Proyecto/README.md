@@ -16,46 +16,5 @@ In the third stage, several future development scenarios were considered to addr
 
 Finally, a use case and smart grid architecture model (SGAM) were developed to conceptualize how advanced control and communication technologies could support the transition towards a more flexible, reliable, and sustainable electrical network.
 
-# Topics and Schedule 
-## I. Study of the current system:
-- Implemented on commit 11/10/2025 [b1a7017](https://github.com/gmane52/SmartGrids/commit/b1a7017666395493133c01662ca9f717cf50e4df)
-
-### a. Data adquisitation
-- Implemented on commit 11/10/2025 [b1a7017](https://github.com/gmane52/SmartGrids/commit/b1a7017666395493133c01662ca9f717cf50e4df)
-
-### b. Normalaise demand and generation 
-- Implemented on commit 11/10/2025 [b1a7017](https://github.com/gmane52/SmartGrids/commit/b1a7017666395493133c01662ca9f717cf50e4df)
-
-### c. Model the electrical system with PandaPower
-For this part, an extra file has been developed named "GridDefinition.py". This script generates and saves the basic aspects of the network in a .xml file so it can be used for next steps and has different versions of the grid. It generates HVbuses, MVbuses, Transformers, lines, loads, generators and slack without considering load and generation profiles. 
-
-- Implemented on commit 11/10/2025 [1e79616](https://github.com/gmane52/SmartGrids/commit/1e796167f9bf61e4c781d877edd6d97b1307bb29)
-
-
-### d. Carry out the load flow study according to the loead and generation profile for 24h
-**Considerations:**
-- Loads have a PF of 0.98 inductive
-- Voltage at the generation points must be kept constant.
-### e. Identify the problems of the current system:
-1. Demand coverage
-2. Voltage deviations
-3. Equipment overload
-4. Interruptibility (for one year)
-### f. Estimate the network operating costs for one year
-1. Compute total amount of energy imported and its cost considering the three time zones
-2. Compute line and transformer failure costs
-
-## II. Upgrading the current network, phase 1.
-
-
-
-## Schedule
+# Schedule
 ![Project schedule](Gantt.png)
-
-# DUDAS:
-- Los porfiles tienen que ser de 24h, un solo dia, O de todo el año cada 24h.??
-- Ahora vamos desarrollando el proyecto o como?
-- Para la generacion, que hacemos? miramos placas o como? como pasamos de hectarias a MW.
-- Como definimos que es optimo o no, como hacemos para mejorar la red, en que nos basamos.
-- Lo de los escenarios? como va? que hacemos?
-
